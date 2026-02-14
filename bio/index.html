@@ -22,7 +22,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* This stops the 'zoom out' or side-scrolling */
+            overflow-x: hidden; 
             background-color: #fdfcf8; 
         }
 
@@ -46,7 +46,7 @@
         }
 
         .brand-logo {
-            width: 400px; 
+            width: 320px; /* Scaled down logo slightly to match buttons */
             max-width: 85%;
             height: auto;
             filter: drop-shadow(0 5px 15px rgba(119, 100, 175, 0.3));
@@ -69,10 +69,10 @@
             transform: translateY(-3px);
         }
 
-        /* --- THE FIXED CASSETTE ANCHOR --- */
+        /* --- THE CASSETTE ANCHOR --- */
         .links-wrapper {
-            width: 85%;
-            max-width: 400px;
+            width: 75%; /* Reduced width to show more of the background */
+            max-width: 300px; /* Narrower buttons = more visible lines */
             display: flex;
             flex-direction: column;
             gap: 14px;
@@ -94,13 +94,13 @@
         .cassette-left {
             background-image: url('background_lt.jpg');
             background-position: right center;
-            left: -95px; 
+            left: -85px; /* Pinned closer to narrow buttons */
         }
 
         .cassette-right {
             background-image: url('background_rt.jpg');
             background-position: left center;
-            right: -95px; 
+            right: -85px; /* Pinned closer to narrow buttons */
         }
 
         /* --- BUTTON STYLES --- */
@@ -110,7 +110,7 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: var(--purple);
             text-decoration: none;
-            padding: 16px;
+            padding: 14px; /* Slightly tighter padding for shorter buttons */
             border-radius: 12px;
             text-align: center;
             font-weight: 700;
@@ -120,6 +120,7 @@
             gap: 10px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            font-size: 0.95rem; /* Slightly smaller text for narrower layout */
         }
 
         .featured {
@@ -159,10 +160,13 @@
             text-align: center;
         }
 
-        /* MOBILE FIX: Scales traces slightly and pulls them in on narrow screens */
-        @media (max-width: 600px) {
-            .cassette-left { left: -75px; width: 60px; }
-            .cassette-right { right: -75px; width: 60px; }
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 500px) {
+            .links-wrapper {
+                max-width: 260px; /* Even narrower on tiny screens */
+            }
+            .cassette-left { left: -70px; width: 60px; }
+            .cassette-right { right: -70px; width: 60px; }
         }
     </style>
 </head>
@@ -186,11 +190,21 @@
         <a href="#" class="link-card featured">
             <i class="fas fa-microchip"></i> Latest Project: add
         </a>
-        <a href="#" class="link-card">Portfolio & Services</a>
-        <a href="#" class="link-card">Firmware & Embedded Software</a>
-        <a href="#" class="link-card">Creative DIY Crafts</a>
-        <a href="#" class="link-card">My Favorite Tools & Gear</a>
-        <a href="mailto:contispaulcristian@gmail.com" class="link-card contact-btn">Collaborations & Inquiries</a>
+        <a href="#" class="link-card">
+            <i class="fas fa-briefcase"></i> Portfolio & Services
+        </a>
+        <a href="#" class="link-card">
+            <i class="fas fa-code"></i> Firmware & Embedded Software
+        </a>
+        <a href="#" class="link-card">
+            <i class="fas fa-lightbulb"></i> Creative DIY Crafts
+        </a>
+        <a href="#" class="link-card">
+            <i class="fas fa-tools"></i> My Favorite Tools & Gear
+        </a>
+        <a href="mailto:contispaulcristian@gmail.com" class="link-card contact-btn">
+            <i class="fas fa-envelope"></i> Collaborations & Inquiries
+        </a>
     </div>
 
     <footer>© 2020 DIY FOR GEEKS</footer>
