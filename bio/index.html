@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>DIY For Geeks | Engineering Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700&family=Jura:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -16,17 +16,26 @@
             --teal-bright: #31c1b8;
         }
 
+        /* STRICT OVERFLOW CONTROL */
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* This stops the 'zoom out' or side-scrolling */
+            background-color: #fdfcf8; 
+        }
+
         body {
-              background-color: #fdfcf8; 
-              color: #2d2d2d;
-              font-family: 'Archivo Narrow', sans-serif;
-              margin: 0;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              min-height: 100vh;
-              padding: 40px 20px;
-              overflow-x: hidden;
+            color: #2d2d2d;
+            font-family: 'Archivo Narrow', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            box-sizing: border-box;
         }
 
         .logo-container {
@@ -38,6 +47,7 @@
 
         .brand-logo {
             width: 400px; 
+            max-width: 85%;
             height: auto;
             filter: drop-shadow(0 5px 15px rgba(119, 100, 175, 0.3));
         }
@@ -59,9 +69,9 @@
             transform: translateY(-3px);
         }
 
-        /* --- THE CENTERED CASSETTE ANCHOR --- */
+        /* --- THE FIXED CASSETTE ANCHOR --- */
         .links-wrapper {
-            width: 100%;
+            width: 85%;
             max-width: 400px;
             display: flex;
             flex-direction: column;
@@ -72,7 +82,7 @@
         .cassette-left, .cassette-right {
             position: absolute;
             top: 50%;
-            transform: translateY(-50%); /* Ensures vertical center relative to buttons */
+            transform: translateY(-50%);
             width: 80px; 
             height: 100%;
             background-size: contain;
@@ -84,13 +94,13 @@
         .cassette-left {
             background-image: url('background_lt.jpg');
             background-position: right center;
-            left: -95px; /* Pinned distance from button edge */
+            left: -95px; 
         }
 
         .cassette-right {
             background-image: url('background_rt.jpg');
             background-position: left center;
-            right: -95px; /* Pinned distance from button edge */
+            right: -95px; 
         }
 
         /* --- BUTTON STYLES --- */
@@ -112,7 +122,6 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        /* Latest Project Style */
         .featured {
             background: linear-gradient(90deg, var(--teal-mid), var(--teal-bright));
             color: white;
@@ -121,7 +130,6 @@
             overflow: hidden;
         }
 
-        /* Hover: Scale up, White BG, Purple Border */
         .featured:hover {
             transform: scale(1.02);
             background: white !important; 
@@ -129,7 +137,6 @@
             border: 1px solid #7764af; 
         }
 
-        /* Hover for all other buttons */
         .link-card:hover:not(.featured) {
             background: white;
             border-color: var(--teal-bright);
@@ -144,17 +151,18 @@
         }
 
         footer {
-            margin-top: 40px;
+            margin-top: auto;
+            padding: 40px 0;
             font-size: 0.8rem;
             color: #aaa;
             font-family: 'Jura', sans-serif;
             text-align: center;
         }
 
-        /* Mobile Adjustments */
-        @media (max-width: 850px) {
-            .cassette-left { left: -85px; opacity: 0.8; }
-            .cassette-right { right: -85px; opacity: 0.8; }
+        /* MOBILE FIX: Scales traces slightly and pulls them in on narrow screens */
+        @media (max-width: 600px) {
+            .cassette-left { left: -75px; width: 60px; }
+            .cassette-right { right: -75px; width: 60px; }
         }
     </style>
 </head>
@@ -165,10 +173,10 @@
     </div>
 
     <div class="social-icons">
-        <a href="https://www.diyforgeeks.com" title="Website"><i class="fas fa-globe"></i></a>
-        <a href="https://www.youtube.com/@diyforgeeks" title="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://instagram.com/diyforgeeks" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://github.com/contispaulcristian" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.diyforgeeks.com"><i class="fas fa-globe"></i></a>
+        <a href="https://www.youtube.com/@diyforgeeks"><i class="fab fa-youtube"></i></a>
+        <a href="https://instagram.com/diyforgeeks"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/contispaulcristian"><i class="fab fa-github"></i></a>
     </div>
 
     <div class="links-wrapper">
