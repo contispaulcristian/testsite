@@ -69,6 +69,7 @@
             position: relative;
         }
 
+        /* Cassette pieces pinned to buttons */
         .cassette-left, .cassette-right {
             position: absolute;
             top: 50%;
@@ -84,16 +85,16 @@
         .cassette-left {
             background-image: url('background_lt.jpg');
             background-position: right center;
-            left: -90px;
+            left: -95px; /* Adjust this to pull traces closer or push further */
         }
 
         .cassette-right {
             background-image: url('background_rt.jpg');
             background-position: left center;
-            right: -90px;
+            right: -95px; /* Adjust this to pull traces closer or push further */
         }
 
-        /* --- BUTTON STYLES --- */
+        /* --- YOUR ORIGINAL BUTTONS --- */
         .link-card {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
@@ -112,21 +113,21 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        /* FIXED: Latest Project button style and hover movement */
+        /* Latest Project button matching movement of others */
         .featured {
             background: linear-gradient(90deg, var(--teal-mid), var(--teal-bright));
             color: white;
-            border: 1px solid transparent; /* Placeholder for hover border */
+            border: 1px solid transparent; 
             position: relative;
             overflow: hidden;
         }
 
-        /* Hover effect for the featured button specifically */
+        /* Featured Hover: Scale up, White BG, Purple Border */
         .featured:hover {
             transform: scale(1.02);
-            background: white; /* Matches the "moving" style of others */
-            color: var(--teal-bright); /* Text color flip for contrast */
-            border-color: #7764af; /* PURPLE BORDER on hover as requested */
+            background: white !important; 
+            color: var(--teal-bright); 
+            border: 1px solid #7764af; /* Purple border added */
         }
 
         /* Standard hover for all white buttons */
@@ -148,6 +149,7 @@
             font-size: 0.8rem;
             color: #aaa;
             font-family: 'Jura', sans-serif;
+            text-align: center;
         }
     </style>
 </head>
@@ -171,21 +173,11 @@
         <a href="#" class="link-card featured">
             <i class="fas fa-microchip"></i> Latest Project: add
         </a>
-        <a href="#" class="link-card">
-            <i class="fas fa-briefcase"></i> Portfolio & Services
-        </a>
-        <a href="#" class="link-card">
-            <i class="fas fa-code"></i> Firmware & Embedded Software
-        </a>
-        <a href="#" class="link-card">
-            <i class="fas fa-lightbulb"></i> Creative DIY Crafts
-        </a>
-        <a href="#" class="link-card">
-            <i class="fas fa-tools"></i> My Favorite Tools & Gear
-        </a>
-        <a href="mailto:contispaulcristian@gmail.com" class="link-card contact-btn">
-            <i class="fas fa-envelope"></i> Collaborations & Inquiries
-        </a>
+        <a href="#" class="link-card">Portfolio & Services</a>
+        <a href="#" class="link-card">Firmware & Embedded Software</a>
+        <a href="#" class="link-card">Creative DIY Crafts</a>
+        <a href="#" class="link-card">My Favorite Tools & Gear</a>
+        <a href="mailto:contispaulcristian@gmail.com" class="link-card contact-btn">Collaborations & Inquiries</a>
     </div>
 
     <footer>© 2020 DIY FOR GEEKS</footer>
