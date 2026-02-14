@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY For Geeks | Engineering Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700&family=Jura:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-off-white: #fdfcf8;
+            --purple: #7764af;
+            --blue: #5f83b2;
+            --teal-mid: #48a2b5;
+            --teal-bright: #31c1b8;
+        }
+
+        body {
+              background-color: #fdfcf8; 
+              color: #2d2d2d;
+              font-family: 'Archivo Narrow', sans-serif;
+              margin: 0;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              min-height: 100vh;
+              padding: 40px 20px;
+              overflow-x: hidden;
+        }
+
+        .logo-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .brand-logo {
+            width: 400px; 
+            height: auto;
+            filter: drop-shadow(0 5px 15px rgba(119, 100, 175, 0.3));
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 35px;
+            font-size: 1.5rem;
+        }
+
+        .social-icons a {
+            color: var(--purple);
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .social-icons a:hover {
+            color: var(--teal-bright);
+            transform: translateY(-3px);
+        }
+
+        /* --- THE CASSETTE ANCHOR --- */
+        .links-wrapper {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            position: relative;
+        }
+
+        .cassette-left, .cassette-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px; 
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .cassette-left {
+            background-image: url('background_lt.jpg');
+            background-position: right center;
+            left: -90px;
+        }
+
+        .cassette-right {
+            background-image: url('background_rt.jpg');
+            background-position: left center;
+            right: -90px;
+        }
+
+        /* --- BUTTON STYLES --- */
+        .link-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--purple);
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* FIXED: Latest Project button style and hover movement */
+        .featured {
+            background: linear-gradient(90deg, var(--teal-mid), var(--teal-bright));
+            color: white;
+            border: 1px solid transparent; /* Placeholder for hover border */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover effect for the featured button specifically */
+        .featured:hover {
+            transform: scale(1.02);
+            background: white; /* Matches the "moving" style of others */
+            color: var(--teal-bright); /* Text color flip for contrast */
+            border-color: #7764af; /* PURPLE BORDER on hover as requested */
+        }
+
+        /* Standard hover for all white buttons */
+        .link-card:hover:not(.featured) {
+            background: white;
+            border-color: var(--teal-bright);
+            transform: scale(1.02);
+        }
+
+        .contact-btn {
+            border: 2px dashed var(--teal-mid);
+            background: transparent;
+            color: var(--teal-mid);
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #aaa;
+            font-family: 'Jura', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="logo.png" alt="DIY For Geeks Logo" class="brand-logo">
+    </div>
+
+    <div class="social-icons">
+        <a href="https://www.diyforgeeks.com"><i class="fas fa-globe"></i></a>
+        <a href="https://www.youtube.com/@diyforgeeks"><i class="fab fa-youtube"></i></a>
+        <a href="https://instagram.com/diyforgeeks"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/contispaulcristian"><i class="fab fa-github"></i></a>
+    </div>
+
+    <div class="links-wrapper">
+        <div class="cassette-left"></div>
+        <div class="cassette-right"></div>
+
+        <a href="#" class="link-card featured">
+            <i class="fas fa-microchip"></i> Latest Project: add
+        </a>
+        <a href="#" class="link-card">
+            <i class="fas fa-briefcase"></i> Portfolio & Services
+        </a>
+        <a href="#" class="link-card">
+            <i class="fas fa-code"></i> Firmware & Embedded Software
+        </a>
+        <a href="#" class="link-card">
+            <i class="fas fa-lightbulb"></i> Creative DIY Crafts
+        </a>
+        <a href="#" class="link-card">
+            <i class="fas fa-tools"></i> My Favorite Tools & Gear
+        </a>
+        <a href="mailto:contispaulcristian@gmail.com" class="link-card contact-btn">
+            <i class="fas fa-envelope"></i> Collaborations & Inquiries
+        </a>
+    </div>
+
+    <footer>© 2020 DIY FOR GEEKS</footer>
+
+</body>
+</html>
